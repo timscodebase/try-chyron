@@ -14,45 +14,57 @@
     'Sports Update: Team Wins Championship',
     'Weather Alert: Severe Storms Expected'
   ];
+
+  // Derived customStyles based on breaking state
+  let customStyles = $derived(
+    breaking
+      ? { 'color-chyron-surface': 'var(--color-breaking-news-background, #ff0000)' }
+      : {}
+  );
 </script>
 
 <div class="toggles">
   <div>
     <label>
-      <input type="checkbox" bind:checked={breaking} />
-      Breaking
+      <input type="checkbox" bind:checked={breaking} aria-label="Toggle breaking news style" />
+      Breaking News
     </label>
   </div>
   <div>
     <label>
-      <input type="checkbox" bind:checked={headline} />
+      <input type="checkbox" bind:checked={headline} aria-label="Toggle headline section" />
       Headline
     </label>
   </div>
   <div>
     <label>
-      <input type="checkbox" bind:checked={logo} />
+      <input type="checkbox" bind:checked={logo} aria-label="Toggle logo section" />
       Logo
     </label>
     <label>
-      <input type="checkbox" bind:checked={logoLeft} disabled={!logo} />
+      <input
+        type="checkbox"
+        bind:checked={logoLeft}
+        disabled={!logo}
+        aria-label="Toggle logo position to left"
+      />
       Logo Left
     </label>
   </div>
   <div>
     <label>
-      <input type="checkbox" bind:checked={chyron} />
+      <input type="checkbox" bind:checked={chyron} aria-label="Toggle chyron section" />
       Chyron
     </label>
   </div>
 </div>
 
-<video controls autoplay muted loop>
+<video controls autoplay muted loop playsinline>
   <source src="/vids/demo.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
 </video>
 
 <ChyronWrapper
-  {breaking}
   {headline}
   {headlines}
   {logo}
@@ -61,6 +73,7 @@
   logoUrl="https://placehold.co"
   logoAlt="News Logo"
   logoSize={150}
+  {customStyles}
 />
 
 <style>
@@ -103,6 +116,7 @@
   video {
     width: 100%;
     height: auto;
-    object-fit: fill;
+    object-fit: cover;
+    display: block;
   }
 </style>
