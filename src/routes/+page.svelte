@@ -47,10 +47,9 @@
   </div>
 </div>
 
-<div class="image-container">
-  <img src="/imgs/IMG_7689.jpg" alt="Stop Sign" />
-  <div class="overlay"></div>
-</div>
+<video controls autoplay muted loop>
+  <source src="/vids/demo.mp4" type="video/mp4" />
+</video>
 
 <ChyronWrapper
   {breaking}
@@ -101,25 +100,9 @@
     opacity: 0.5;
   }
 
-  .image-container {
-    position: relative;
-    width: 100%;
-    max-width: 100vw;
-    height: auto;
-  }
-
-  .image-container img {
+  video {
     width: 100%;
     height: auto;
-    display: block;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-overlay, rgba(0, 0, 0, 0.5));
+    object-fit: fill;
   }
 </style>
