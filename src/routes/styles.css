@@ -43,7 +43,6 @@ h1, h2, h3, p, ul, li, button, a {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  overflow: hidden;
 }
 
 .hero::before {
