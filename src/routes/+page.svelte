@@ -60,7 +60,7 @@
 </div>
 
 <video controls autoplay muted loop playsinline>
-  <source src="/vids/demo.mp4" type="video/mp4" />
+  <source src="https://res.cloudinary.com/tithos/video/upload/v1747264461/demo_fwrgzu.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
