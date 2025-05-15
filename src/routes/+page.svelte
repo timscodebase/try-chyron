@@ -2,10 +2,10 @@
   import { ChyronWrapper } from 'chyron-svelte';
 
   // Reactive state for toggles
-  let breaking = $state(true);
+  let breaking = $state(false);
   let headline = $state(true);
   let logo = $state(true);
-  let logoLeft = $state(true);
+  let logoLeft = $state(false);
   let chyron = $state(true);
 
   // Sample headlines (required by ChyronWrapper)
@@ -65,6 +65,7 @@
 </video>
 
 <ChyronWrapper
+  {breaking}
   {headline}
   {headlines}
   {logo}
