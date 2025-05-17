@@ -8,6 +8,12 @@
   let logo = $state(true);
   let logoLeft = $state(false);
   let chyron = $state(true);
+  let video = $state(true);
+  let togglesClosed = $state(false);
+
+  function toggleToggles() {
+    togglesClosed = !togglesClosed;
+  }
 
   // Sample headlines (required by ChyronWrapper)
   const headlines = [
@@ -25,45 +31,56 @@
 </script>
 
 <div class="toggles">
-  <div>
-    <label>
-      <input type="checkbox" bind:checked={breaking} aria-label="Toggle breaking news style" />
-      Breaking News
-    </label>
-  </div>
-  <div>
-    <label>
-      <input type="checkbox" bind:checked={headline} aria-label="Toggle headline section" />
-      Headline
-    </label>
-  </div>
-  <div>
-    <label>
-      <input type="checkbox" bind:checked={logo} aria-label="Toggle logo section" />
-      Logo
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        bind:checked={logoLeft}
-        disabled={!logo}
-        aria-label="Toggle logo position to left"
-      />
-      Logo Left
-    </label>
-  </div>
-  <div>
-    <label>
-      <input type="checkbox" bind:checked={chyron} aria-label="Toggle chyron section" />
-      Chyron
-    </label>
+  <button onclick={toggleToggles}>{togglesClosed ? ">" : "<"}</button>
+  <div class:closed={togglesClosed}>
+    <div>
+      <label>
+        <input type="checkbox" bind:checked={video} aria-label="Toggle Video" />
+        Video
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" bind:checked={breaking} aria-label="Toggle Breaking section" />
+        Breaking News
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" bind:checked={headline} aria-label="Toggle Headline section" />
+        Headline
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" bind:checked={logo} aria-label="Toggle Logo section" />
+        Logo
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          bind:checked={logoLeft}
+          disabled={!logo}
+          aria-label="Toggle logo position to left"
+        />
+        Logo Left
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" bind:checked={chyron} aria-label="Toggle chyron section" />
+        Chyron
+      </label>
+    </div>
   </div>
 </div>
 
+{#if video}
 <video controls autoplay muted loop playsinline>
   <source src="https://res.cloudinary.com/tithos/video/upload/v1747264461/demo_fwrgzu.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
+{/if}
 
 <ChyronWrapper
   {breaking}
@@ -90,6 +107,12 @@
     top: 1rem;
     left: 1rem;
     z-index: 1001;
+    transition: width 0.3s ease;
+    overflow: hidden;
+  }
+
+  .closed {
+    display: none !important;
   }
 
   .toggles div {
@@ -113,6 +136,18 @@
 
   input[type='checkbox']:disabled {
     opacity: 0.5;
+  }
+
+  button {
+    background-color: var(--color-primary, #007bff);
+    color: var(--white, #fff);
+    border: none;
+    border-radius: var(--size-border-radius, 0.5rem);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: var(--font-family-headline, 'Inter', sans-serif);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
   }
 
   video {
