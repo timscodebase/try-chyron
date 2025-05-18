@@ -89,5 +89,5 @@
 <div class="divider"></div>
 
 <footer>
-  <p>Made by Tim Smith. Powered by Svelte</p>
+  <p>Made by <a href="http://github.com/timscodebase" target="_blank">Tim Smith</a>. Powered by <a href="http://svelte.dev" target="_blank">Svelte</a></p>
 </footer>
