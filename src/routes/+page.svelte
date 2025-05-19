@@ -1,13 +1,10 @@
 <script lang="ts">
+  import { createSlideToLeftAnimation, createSlideToRightAnimation, createFadeInAnimation } from '$lib/animations';
   import demoImg from '$lib/imgs/demo.png';
-  export const prerender = true; // Fix Vercel dynamic routes error
+  export const prerender = true;
 
-  let copied = $state(false);
   function copyCode(code: string) {
-    navigator.clipboard.writeText(code).then(() => {
-      copied = true;
-      setTimeout(() => (copied = false), 2000); // Reset after 2s
-    }).catch(err => console.error('Copy failed:', err));
+    navigator.clipboard.writeText(code)
   }
 </script>
 
@@ -20,9 +17,9 @@
 <header class="hero" style="--hero-bg: url({demoImg})">
   <div class="on-top grid">
     <div>
-      <h1 class="aldrich-400">Build Dynamic News Tickers with Ease</h1>
-      <h2 class="inter-300 fade-in">chyron-svelte is a lightweight, customizable Svelte library for creating broadcast-style chyrons—perfect for news, sports, or live event apps.</h2>
-      <p class="fade-in">Add scrolling headlines, cycling news, and branded logos to your web projects in minutes. With TypeScript support, theme-able styles, and responsive design, chyron-svelte empowers developers to craft engaging, professional tickers without the hassle.</p>
+      <h1 class="aldrich-400" {@attach createSlideToLeftAnimation()}>Build Dynamic News Tickers with Ease</h1>
+      <h2 class="inter-300" {@attach createFadeInAnimation()}>chyron-svelte is a lightweight, customizable Svelte library for creating broadcast-style chyrons—perfect for news, sports, or live event apps.</h2>
+      <p {@attach createFadeInAnimation()}>Add scrolling headlines, cycling news, and branded logos to your web projects in minutes. With TypeScript support, theme-able styles, and responsive design, chyron-svelte empowers developers to craft engaging, professional tickers without the hassle.</p>
     </div>
     <div class="full-center flex-column">
       <div class="code-box">
@@ -48,8 +45,8 @@
 <div class="divider"></div>
 
 <section class="features">
-  <h2 class="aldrich-400 text-left  slide-to-right">Why Choose chyron-svelte?</h2>
-  <h3>Packed with features to make your news tickers stand out.</h3>
+  <h2 class="aldrich-400 text-left" {@attach createSlideToLeftAnimation()}>Why Choose chyron-svelte?</h2>
+  <h3 {@attach createFadeInAnimation()}>Packed with features to make your news tickers stand out.</h3>
   <ul>
     <li>
       <strong>🚀 Effortless Integration</strong>: Install via npm and start building with a single import. Works seamlessly with SvelteKit and TypeScript.
@@ -76,8 +73,8 @@
 <div class="divider"></div>
 
 <section class="use-cases">
-  <h2 class="aldrich-400 text-right slide-to-left">Bring Your Ideas to Life</h2>
-  <h3>From news apps to live streams, chyron-svelte fits any project needing real-time updates.</h3>
+  <h2 class="aldrich-400 text-right" {@attach createSlideToRightAnimation()}>Bring Your Ideas to Life</h2>
+  <h3 {@attach createFadeInAnimation()}>From news apps to live streams, chyron-svelte fits any project needing real-time updates.</h3>
   <ul>
     <li><strong>News Websites</strong>: Display breaking news with scrolling tickers and bold headlines, styled to match your site's branding.</li>
     <li><strong>Sports Apps</strong>: Keep fans engaged with live score updates and sponsor logos in a sleek, broadcast-style chyron.</li>
