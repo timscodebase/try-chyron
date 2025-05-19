@@ -36,7 +36,7 @@
 
       </div>
       <div class="secondary-ctas">
-        <a class="ctas-button" href="/demo" target="_blank">View Demo</a> | <a class="ctas-button" href="https://github.com/timscodebase/chyron-svelte">Explore on GitHub</a>
+        <a class="ctas-button" href="/demo" target="_blank">View Demo</a> | <a class="ctas-button" href="https://github.com/timscodebase/chyron-svelte" target="_blank">Explore on GitHub</a>
       </div>
     </div>
     
