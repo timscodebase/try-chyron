@@ -19,7 +19,7 @@ export function createSlideToLeftAnimation(): Attachment {
         opacity: 1,
         x: 0,
         duration: 1,
-        ease: 'power2.out',
+        ease: '',
         scrollTrigger: {
           trigger: element,
           start: 'top bottom', // Top of element hits bottom of viewport
@@ -49,7 +49,7 @@ export function createSlideToRightAnimation(): Attachment {
         opacity: 1,
         x: -30, // Slide to right
         duration: 1,
-        ease: 'power2.out',
+        ease: '',
         scrollTrigger: {
           trigger: element,
           start: 'top bottom', // Top of element hits bottom of viewport
@@ -78,7 +78,7 @@ export function createFadeInAnimation(): Attachment {
       {
         opacity: 1,
         duration: 1.5,
-        ease: 'power2.out',
+        ease: '',
         scrollTrigger: {
           trigger: element,
           start: 'top bottom',

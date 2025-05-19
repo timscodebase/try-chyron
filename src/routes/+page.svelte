@@ -1,7 +1,6 @@
 <script lang="ts">
   import { createSlideToLeftAnimation, createSlideToRightAnimation, createFadeInAnimation } from '$lib/animations';
   import demoImg from '$lib/imgs/demo.png';
-  export const prerender = true;
 
   function copyCode(code: string) {
     navigator.clipboard.writeText(code)
@@ -17,7 +16,9 @@
 <header class="hero" style="--hero-bg: url({demoImg})">
   <div class="on-top grid">
     <div>
-      <h1 class="aldrich-400" {@attach createSlideToLeftAnimation()}>Build Dynamic News Tickers with Ease</h1>
+      <h1 class="aldrich-400" {@attach createSlideToLeftAnimation()}>Build Dynamic News Tickers with Ease
+      </h1>
+      <p class="version aldrich-400" {@attach createSlideToRightAnimation()}>Version: 0.8.2</p>
       <h2 class="inter-300" {@attach createFadeInAnimation()}>chyron-svelte is a lightweight, customizable Svelte library for creating broadcast-style chyrons—perfect for news, sports, or live event apps.</h2>
       <p {@attach createFadeInAnimation()}>Add scrolling headlines, cycling news, and branded logos to your web projects in minutes. With TypeScript support, theme-able styles, and responsive design, chyron-svelte empowers developers to craft engaging, professional tickers without the hassle.</p>
     </div>
@@ -31,8 +32,8 @@
         >
           <span class="copy-icon"><iconify-icon icon="ph:copy"></iconify-icon></span>
           <span class="copy-text">Copy</span>
-          <span class="copied-text" aria-live="polite">Copied!</span>
         </button>
+
       </div>
       <div class="secondary-ctas">
         <a class="ctas-button" href="/demo" target="_blank">View Demo</a> | <a class="ctas-button" href="https://github.com/timscodebase/chyron-svelte">Explore on GitHub</a>
