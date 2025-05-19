@@ -1,6 +1,5 @@
 <script lang="ts">
   import { ChyronWrapper } from 'chyron-svelte';
-  export const prerender = true;
 
   // Reactive state for toggles
   let breaking = $state(false);
