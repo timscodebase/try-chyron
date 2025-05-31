@@ -8,8 +8,3 @@ Landing page for the `chyron-svelte` library.
 - Basic responsive layout
 - Working demo
 
-### Todos
-
-- [ ] Light/Dark theme
-- [ ] Better overall layout
-- [ ] SEO/Keywords, etc
