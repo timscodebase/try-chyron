@@ -8,4 +8,6 @@
   let { data, children }: { data: LayoutData; children: Snippet } = $props();
 </script>
 
+
+
 {@render children()}
