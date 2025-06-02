@@ -52,7 +52,7 @@ body {
   --font-weight-breaking-news: 800;
 
   --gradient-neg: linear-gradient(-145deg, #000 50%, #1c1c1c);
-  --gradient-pos: linear-gradient(260deg, #181818, #000);;
+  --gradient-pos: linear-gradient(260deg, #181818, #000);
 
   --color-headline-surface: var(--light-blue);
   --color-logo-surface: var(--red);
