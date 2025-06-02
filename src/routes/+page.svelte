@@ -2,7 +2,8 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { ScrollSmoother } from 'gsap/ScrollSmoother';
-	import { ThemeToggle } from '$lib';
+	import { HeaderFour, HeroFour, ThemeToggle } from '$lib';
+	import demo from '$lib/imgs/demo-2.png';
 
 	import { browser } from '$app/environment';
 
@@ -64,6 +65,8 @@
 
 <div id="smooth-wrapper" {@attach createScrollSmoother()}>
 	<div id="smooth-content">
+		<HeaderFour />
+		<HeroFour img={demo} />
 		<header class="hero">
 			<ThemeToggle />
 			<div class="on-top grid">
